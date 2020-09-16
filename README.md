@@ -31,7 +31,7 @@ To start using DNS authentication for the Hetzner DNS API, pass the following ar
 
 From the hetzner DNS control panel at https://dns.hetzner.com go to "API Tokens" and add a personal access token.
 
-An example ``credentials.ini`` file:
+An example ``hetzner-credentials.ini`` file:
 
 ```ini
 certbot_dns_hetzner:dns_hetzner_api_token = nohnah4zoo9Kiejee9aGh0thoopee2sa
@@ -41,7 +41,7 @@ To acquire a certificate for `example.com`
 ```shell script
 certbot certonly \\
  --authenticator certbot-dns-hetzner:dns-hetzner \\
- --certbot-dns-hetzner:dns-hetzner-credentials /path/to/my/hetzner.ini \\
+ --certbot-dns-hetzner:dns-hetzner-credentials /path/to/my/hetzner-credentials.ini \\
  -d example.com
 ```
 
@@ -49,7 +49,7 @@ To acquire a certificate for ``*.example.com``
 ```shell script
    certbot certonly \\
      --authenticator certbot-dns-hetzner:dns-hetzner \\
-     --certbot-dns-hetzner:dns-hetzner-credentials /path/to/my/hetzner.ini \\
+     --certbot-dns-hetzner:dns-hetzner-credentials /path/to/my/hetzner-credentials.ini \\
      -d '*.example.com'
 ```
      
